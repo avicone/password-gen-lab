@@ -7,6 +7,6 @@ def generate_password(length=12, use_special=False):
 
     chars = string.ascii_letters + string.digits
     if use_special:
-        chars += "!@#$%^&*()-_=+"
+        chars += "!@#$%^&*()-_=+[]{}<>~"
 
     return ''.join(secrets.choice(chars) for _ in range(length))
