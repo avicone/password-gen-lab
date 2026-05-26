@@ -1,5 +1,3 @@
-def print_success(message):
-    print(f"[OK] {message}")
-
-def print_error(message):
-    print(f"[ERROR] {message}")
+def print_message(message, level="info"):
+    prefix = {"info": "[*]", "success": "[OK]", "error": "[ERROR]"}.get(level, "[*]")
+    print(f"{prefix} {message}")
