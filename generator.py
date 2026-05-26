@@ -1,7 +1,7 @@
 import secrets
 import string
 
-def generate_password(length=12, use_special=False, uppercase_only=False):
+def generate_password(length=12, use_special=False, uppercase_only=False, lowercase_only=False):
     if length < 4:
         raise ValueError("Password length must be at least 4 characters")
 
@@ -10,5 +10,7 @@ def generate_password(length=12, use_special=False, uppercase_only=False):
         chars += "!@#$%^&*()-_=+[]{}<>~"
     if uppercase_only:
         chars = chars.upper()
+    elif lowercase_only:
+        chars = chars.lower()
 
     return ''.join(secrets.choice(chars) for _ in range(length))
